@@ -1,0 +1,281 @@
+<DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Elige tu aventura</title>
+
+            <!-- Enlazar el archivo de JavaScript -->
+            <script src="AdventurePathManager.js"></script>
+            
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Playwrite+AR:wght@100..400&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playwrite+AR:wght@100..400&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playwrite+AR:wght@100..400&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Varela+Round&display=swap" rel="stylesheet">
+
+            <style>
+                body {
+                    margin: 0;
+                    height: 100vh;
+                    display: flex;
+                    justify-content: center;
+                    /* align-items: center; */
+                    background: radial-gradient(circle, #ffb9168f, #ffb3008f);
+                }
+    
+                .centrado-cursiva {
+                    color: black;
+                    font-family: "Playwrite AR", cursive;
+                    font-optical-sizing: auto;
+                    font-weight: <weight>;
+                    font-style: normal;     
+                    text-align: center; /* Centra el texto */            
+                }
+    
+                .centrado-titulo {
+                    text-align: center;
+                    color: black;
+                    margin-top: 75px;
+    
+                    font-family: "Roboto Mono", monospace;
+                    font-optical-sizing: auto;
+                    font-weight: <weight>;
+                    font-style: normal;              
+                }
+    
+                .boton-start {
+                    margin-left: 100%;
+                    transform: translateX(40%);
+                    font-family: "Josefin Sans", sans-serif;
+                    font-optical-sizing: auto;
+                    font-weight: <weight>;
+                    font-style: normal;
+                    background-color: rgba(255, 100, 0, 1);
+                    color: white;
+                    padding: 20px 100px;
+                    text-align: center; 
+                    font-size: 24px; 
+                    margin: 20px auto; /* Centrando el botón */
+                    margin: 4px 8px; 
+                    cursor: pointer;
+                    border: none;
+                    border-radius: 35px; /* Puntas redondeadas */  
+                    transition: background-color 0.5s ease;
+                    z-index: 999;              
+                }
+    
+                .boton-start:hover {
+                    background-color: #7c3600; /* Cambia el color del botón cuando se pasa el mouse */
+                }
+    
+                #ransomizer {
+                    font-size:3em;
+                    line-height: normal;
+                    word-spacing:0.5em;
+                }
+        
+                #ransomizer div {
+                    display:inline-block;
+                }
+        
+                #ransomizer .rww {
+                    white-space: pre;
+                    display:inline;
+                    margin-left: .2em;
+                    margin-right: .2em;
+                }
+        
+                #ransomizer .rr {
+                    -ms-transform: rotate(1.5deg);
+                    -webkit-transform: rotate(1.5deg);
+                    transform: rotate(1.5deg);
+                }
+        
+                #ransomizer .rl {
+                    -ms-transform: rotate(-1.5deg);
+                    -webkit-transform: rotate(-1.5deg);
+                    transform: rotate(-1.5deg);
+                } 
+
+                .container {
+                    text-align: center;
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                }
+
+                .fade-content {
+                    opacity: 1;
+                    transition: opacity 2s ease-in-out;
+                }
+
+                .fade-content.hidden {
+                    opacity: 0;
+                }
+
+                .varela-round-regular {
+                    font-family: "Varela Round", sans-serif;
+                    font-weight: 400;
+                    font-style: normal;
+                }
+            </style>
+        </head>
+    
+        <body>
+            <div>
+                <div id="content" class="fade-content">
+                    <div style = "margin-top: 200px;"> </div>
+                    <div id="ransomizer"><div class="rww"><div style="background-color:#006847;color:#ceffef;font-family:&#039;Tahoma&#039;, Geneva, sans-serif; font-size:100%; font-weight:bold; background-image:url(https://i.imgur.com/ruhP2kd.png) ; background-position: left bottom; font-style:italic; box-shadow:-1px 1px 2px #333; line-height:125%; margin:0.1em; padding:0.3em; vertical-align:baseline; ">A</div><div class="rl" style="background-color:#006847;color:#ceffef;font-family:&#039;Palatino Linotype&#039;, &#039;Book Antiqua&#039;, Palatino, serif; font-size:100%; font-weight:bold; background-image:url(https://i.imgur.com/1wxqouY.png) ; background-position: right center; box-shadow:1px 1px 2px #333; text-transform:lowercase; line-height:75%; margin:0.1em; padding:0.3em; vertical-align:baseline; ">n</div><div class="rr" style="background-color:#006847;color:#ceffef;font-family:&#039;Verdana&#039;, Geneva, sans-serif; font-size:90%; line-height:125%; margin:0.1em; padding:0.1em; vertical-align:baseline; ">i</div><div class="rr" style="background-color:#F8C83C;color:#000000;font-family:&#039;Tahoma&#039;, Geneva, sans-serif; font-size:90%; background-image:url(https://i.imgur.com/1wxqouY.png) ; background-position: center bottom; box-shadow:-1px -1px 2px #333; text-transform:lowercase; line-height:125%; margin:0.1em; padding:0.3em; vertical-align:-0.1em; ">m</div><div class="rl" style="background-color:#CE1126;color:#ffffff;font-family:&#039;Georgia&#039;, serif; font-size:110%; font-weight:bold; background-image:url(https://i.imgur.com/pwrAKPo.png) ; background-position: left bottom; box-shadow:1px -1px 2px #333; text-transform:uppercase; line-height:125%; margin:0.1em; padding:0.2em; vertical-align:-0.1em; ">a</div><div class="rr" style="background-color:#F15770;color:#000000;font-family:&#039;Times New Roman&#039;, Times, serif; font-size:110%; font-weight:bolder; box-shadow:1px 1px 2px #333; text-transform:uppercase; line-height:125%; margin:0.1em; padding:0.2em; vertical-align:baseline; ">l</div></div> <div class="rww"><div style="background-color:#F9AA51;color:#000000;font-family:&#039;Verdana&#039;, Geneva, sans-serif; font-size:110%; background-image:url(https://i.imgur.com/1wxqouY.png) ; background-position: center center; box-shadow:-1px 1px 2px #333; text-transform:uppercase; line-height:100%; text-decoration:underline; margin:0.1em; padding:0.1em; vertical-align:baseline; ">F</div><div class="rr" style="background-color:#803F1D;color:#ffffff;font-family:&#039;Verdana&#039;, Geneva, sans-serif; font-size:110%; font-weight:bolder; font-style:italic; box-shadow:-1px -1px 2px #333; text-transform:lowercase; line-height:75%; margin:0.1em; padding:0.1em; vertical-align:0.1em; ">a</div><div style="background-color:#CE1126;color:#ffffff;font-family:&#039;Times New Roman&#039;, Times, serif; font-size:90%; font-weight:bold; background-image:url(https://i.imgur.com/IcV8Q3G.png) ; background-position: center bottom; box-shadow:1px -1px 2px #333; text-transform:uppercase; line-height:75%; margin:0.1em; padding:0.2em; vertical-align:baseline; ">r</div><div style="background-color:#717732;color:#ffffff;font-family:&#039;Times New Roman&#039;, Times, serif; font-size:90%; background-image:url(https://i.imgur.com/IcV8Q3G.png) ; background-position: right bottom; text-transform:uppercase; line-height:100%; margin:0.1em; padding:0.3em; vertical-align:-0.1em; ">m</div></div></div>
+                    <h2 class="centrado-cursiva">Write Your Own Adventure</h2>
+                    <h2 class="centrado-titulo">A production developed by Mauro Fiore</h2>
+                    <div style = "margin-top: 25px;"> </div>
+                    <button id="change-text-button" class = "boton-start" style="position: absolute;">Start Adventure</button>
+                    <div>  </div>
+                    <img src="C:/Users/Mauro/Downloads/dibujo-facil-de-cerdo-removebg-preview.png" style = "position: relative; left: 26%; top: -15px; width: 45%; height:30%; visibility: hidden; ">
+                </div>
+                <div id="new-content" class="fade-content hidden">
+                    <h2 class="centrado-cursiva" style = "position: absolute; font-size: large; transform: translate(-50%, -50%); left: 50%; top: 13%;">One of
+                        the cows broke in the door of the store-shed with her horn and all the
+                        animals began to help themselves from the bins. It was just then that
+                        Mr. Jones woke up. The next moment he and his four men were in the
+                        store-shed with whips in their hands, lashing out in all directions...</h2>
+                    <div id="basic" class="fade-content">
+                        <button id="NoRebelion" class = "boton-start" style="position: absolute; font-size: large; transform: translate(-50%, -50%); left: 50%; top: 30%; padding: 20px 100px;">Postpone the rebellion</button>
+                        <button id="RebelionSnowbol" class = "boton-start" style="position: absolute; font-size: large; transform: translate(-50%, -50%); left: 50%; top: 40%; padding: 20px 78px;">Rebellion driven by Snowball</button>
+                        <button id="RebelionHistoria" class = "boton-start" style="position: absolute; font-size: large; transform: translate(-50%, -50%); left: 50%; top: 50%; padding: 20px 58px;">Animal Rebellion (Original Story)</button>
+                    </div>
+                                   
+                    <div id="divNoRebelion" class="fade-content hidden">
+                        <h2 class="centrado-cursiva" style = "position: absolute; font-size: large; transform: translate(-50%, -50%); left: 50%; top: 75%; line-height: 2.5; z-index: -1;"> Despite the shortage of food, the animals' neglect, and the deep anger they felt towards Jhones and his men, the animals retreated back to the farm to plan their attack on Jones's men. However, they were convinced by the pigs, especially Snowball, who supported the idea that it was not the right time for a rebellion. The pigs claimed that more planning was necessary to ensure the success of the rebellion. Thus, the animals, gullible and confident in their own ignorance, once again fell into Jones's clutches.
+                            <br><br>Three weeks later, Jhones resumed taking care of the farm more frequently and effectively than before. A clear immediate joy could be observed among the animals, who believed they had made the right decision in not rebelling. Thanks to a good harvest and a bit of luck, Jhones managed to feed the animals and reduce the criticism towards him. Over time, the idea of rebellion, once so hopeful, slowly faded away.
+                            <br><br>The last vestige of resistance was extinguished when Snowball, the last guardian of the old anthem, completely forgot its words and melody. The farm, which once dreamed of the dawn of freedom, was trapped in eternal conformity. The animals, like puppets, accepted their fate not with visible chains, but by succumbing to the chains of their own minds. Their spinning wheel, relentless and endless, trapped them in an endless dance, condemning them to a gray and hopeless existence.
+                        </h2>
+                    </div>
+
+                    <div id="divRebelionSnowbol" class="fade-content hidden">
+                        <div id = "NormalRebelionBysnowball" class = "fade-content">            
+                            <h2 class="centrado-cursiva" style = "position: absolute; font-size: large; transform: translate(-50%, -50%); left: 50%; top: 140%; line-height: 2.5; z-index: -1;"> After the lashings from Jhones’s men, the suffering on the farm reached a breaking point. The animals already had enought, and Snowball, driven by hunger and desperation, was the first to rise against Jhones and his men. The animals, led by Snowball, charged into battle for the food and justice they believed they deserved.
+                            <br><br>Jhones, taken aback by the radical change in the animals’ behavior, reacted with desperation. With his mind contaminated by the alcohol, tried to control the situation by firing his gun. Jhones’s erratic shooting, rather than stopping the animals, resulted in the fall of several of his own men. Amid the chaos, Boxer bit Jhones, causing him to drop the gun, which was then picked up by Snowball.
+                            <br><br>Snowball, with a mix of fear and determination, managed to activate the gun and, with a precise shot, ended Jhnes’s life. The farm fell silent, marked by the end of a cruel regime and a mix of confusion and relief among the animals.
+                            <br><br>With the men of Jhones fleeing and the now-widowed Mrs. Jhones leaving, the animals faced the task of deciding their future. The corpse of Jhones and the disorder stood as witnesses to a successful rebellion, but Snowball saw beyond mere liberation. As the animals discussed what to do next, Snowball, overwhelmed by the combination of his recent victory and newfound power, realized the opportunity before him. Instead of mourning, he saw the rebellion as a means to free himself from any external authority, including the old rules he had once supported.
+                            <br><br>Snowball began to take control of the farm more methodically. Initially, he tried to consolidate his power with speeches and promises of a better future, but soon showed his true colors. Armed with the gun and possessing a cunning superior to that of the other animals, Snowball started imposing his dominance through force and intimidation. His ingenuity, which had once been a tool for the rebellion, transformed into an instrument of tyranny.
+                            <br><br>With each passing day, Snowball descended further into the madness of absolute power. His behavior became increasingly erratic and cruel. The promises of equality and freedom crumbled under the weight of his new oppressive policies. The animals who once admired him began to fear him, as Snowball had turned the farm into a dark reflection of the tyranny they had sought to eradicate.
+                            <br><br>Snowball ordered the construction of higher walls around the farm to keep the animals under control. Meetings and assemblies turned into mere acts of obedience rather than collective discussions. The old ideals of the rebellion were erased and replaced by a new set of laws that kept the animals in a constant state of submission.
+                            <br><br>The farm, which had begun as a place of hope and freedom, became a field of oppression under Snowball’s tyranny. His madness and ability to manipulate others created a regime even more relentless than that of Jhones, proving that true slavery lay not in physical chains, but in the invisible chains of power and madness.
+                            </h2> 
+                            <button id="NoRebelionAgainstSnowball" class = "boton-start" style="position: absolute; font-size: large; transform: translate(-50%, -50%); left: 50%; top: 265%; padding: 20px 53px;">Do not rebel against the tyranny of snowball</button>
+                            <button id="RebelionAgainstSnowball" class = "boton-start" style="position: absolute; font-size: large; transform: translate(-50%, -50%); left: 50%; top: 275%; padding: 20px 78px;">Rebel against the tyranny of snowball</button>
+                            <div style = "margin-top: 10%; position: absolute ;top: 260%; visibility: hidden;"> a </div>
+                        </div>
+                        <div id = "DivNoRebelionAgainstSnowball" class = "fade-content hidden">
+                            
+                        </div>
+                        <div id = "DivRebelionAgainstSnowball" class = "fade-content hidden">
+                            
+                        </div>
+
+                        
+                    </div>
+
+                    <div id="divRebelionHistoria" class="fade-content hidden">
+                        <h2 class="centrado-cursiva" style = "position: absolute; font-size: large; transform: translate(-50%, -50%); left: 50%; top: 80%; line-height: 2.5; z-index: -1;"> Despite the shortage of food, the animals' neglect, and the deep anger they felt towards Jhones and his men, the animals retreated back to the farm to plan their attack on Jhones's men. However, they were convinced by the pigs, especially Snowball, who supported the idea that it was not the right time for a rebellion. The pigs claimed that more planning was necessary to ensure the success of the rebellion. Thus, the animals, gullible and confident in their own ignorance, once again fell into Jhones's clutches.
+                            This was more than the hungry animals could bear. With one accord, though nothing of the kind had been planned beforehand, they flung themselves upon their tormentors. Jhones and his men suddenly found themselves being butted and kicked from all sides. The situation was quite out of their control. They had never seen animals behave like this before, and this sudden uprising of creatures whom they were used to thrashing and maltreating just as they chose, frightened them almost out of their wits. After only a moment or two they gave up trying to defend themselves and took to their heels. A minute later all five of them were in full flight down the cart-track that led to the main road, with the animals pursuing them in triumph. 
+                            <br><br>Mrs. Jhones looked out of the bedroom window, saw what was happening, hurriedly flung a few possessions into a carpet bag, and slipped out of the farm by another way. Moses sprang off his perch and flapped after her, croaking loudly. Meanwhile the animals had chased Jhones and his men out on to the road and slammed the five-barred gate behind them. And so, almost before they knew what was happening, the Rebellion had been successfully carried through: Jhones was expelled,and the Manor Farm was theirs.
+                        </h2>
+                    </div>
+                    
+                    
+                    
+                </div>
+            </div>
+            
+            <script>
+                document.getElementById('change-text-button').addEventListener('click', () => {
+                    const oldContent = document.getElementById('content');
+                    const newContent = document.getElementById('new-content');
+        
+                    // Añadir clase para ocultar el contenido antiguo
+                    oldContent.classList.add('hidden');
+        
+                    // Esperar el tiempo de transición antes de mostrar el nuevo contenido
+                    setTimeout(() => {
+                        oldContent.classList.add('hidden');
+                        newContent.classList.remove('hidden');
+                    }, 2000); // Tiempo en milisegundos (coincide con el tiempo de transición en CSS)
+                });
+
+                document.getElementById('NoRebelion').addEventListener('click', () => {
+                    const oldContent = document.getElementById('basic');
+                    const newContent = document.getElementById('divNoRebelion');
+        
+                    // Añadir clase para ocultar el contenido antiguo
+                    oldContent.classList.add('hidden');
+        
+                    // Esperar el tiempo de transición antes de mostrar el nuevo contenido
+                    setTimeout(() => {
+                        oldContent.classList.add('hidden');
+                        newContent.classList.remove('hidden');
+                    }, 2000); // Tiempo en milisegundos (coincide con el tiempo de transición en CSS)
+                });
+
+                document.getElementById('RebelionSnowbol').addEventListener('click', () => {
+                    const oldContent = document.getElementById('basic');
+                    const newContent = document.getElementById('divRebelionSnowbol');
+        
+                    // Añadir clase para ocultar el contenido antiguo
+                    oldContent.classList.add('hidden');
+        
+                    // Esperar el tiempo de transición antes de mostrar el nuevo contenido
+                    setTimeout(() => {
+                        oldContent.classList.add('hidden');
+                        newContent.classList.remove('hidden');
+                    }, 2000); // Tiempo en milisegundos (coincide con el tiempo de transición en CSS)
+                });
+
+                document.getElementById('RebelionHistoria').addEventListener('click', () => {
+                    const oldContent = document.getElementById('basic');
+                    const newContent = document.getElementById('divRebelionHistoria');
+        
+                    // Añadir clase para ocultar el contenido antiguo
+                    oldContent.classList.add('hidden');
+        
+                    // Esperar el tiempo de transición antes de mostrar el nuevo contenido
+                    setTimeout(() => {
+                        oldContent.classList.add('hidden');
+                        newContent.classList.remove('hidden');
+                    }, 2000); // Tiempo en milisegundos (coincide con el tiempo de transición en CSS)
+                });
+
+                document.getElementById('NoRebelionAgainstSnowball').addEventListener('click', () => {
+                    const oldContent = document.getElementById('NormalRebelionBysnowball');
+                    const newContent = document.getElementById('DivNoRebelionAgainstSnowball');
+        
+                    // Añadir clase para ocultar el contenido antiguo
+                    oldContent.classList.add('hidden');
+        
+                    // Esperar el tiempo de transición antes de mostrar el nuevo contenido
+                    setTimeout(() => {
+                        oldContent.classList.add('hidden');
+                        newContent.classList.remove('hidden');
+                    }, 2000); // Tiempo en milisegundos (coincide con el tiempo de transición en CSS)
+                });
+
+                document.getElementById('RebelionAgainstSnowball').addEventListener('click', () => {
+                    const oldContent = document.getElementById('NormalRebelionBysnowball');
+                    const newContent = document.getElementById('DivRebelionAgainstSnowball');
+        
+                    // Añadir clase para ocultar el contenido antiguo
+                    oldContent.classList.add('hidden');
+        
+                    // Esperar el tiempo de transición antes de mostrar el nuevo contenido
+                    setTimeout(() => {
+                        oldContent.classList.add('hidden');
+                        newContent.classList.remove('hidden');
+                    }, 2000); // Tiempo en milisegundos (coincide con el tiempo de transición en CSS)
+                });
+            </script>
+        </body>
+    </html>

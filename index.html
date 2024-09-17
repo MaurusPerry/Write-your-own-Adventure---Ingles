@@ -1,0 +1,121 @@
+<DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Elige tu aventura</title>
+
+            <!-- Enlazar el archivo de JavaScript -->
+            <script src="AdventurePathManager.js"></script>
+            
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Playwrite+AR:wght@100..400&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playwrite+AR:wght@100..400&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playwrite+AR:wght@100..400&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Varela+Round&display=swap" rel="stylesheet">
+
+            <style>
+                body {
+                    margin: 0;
+                    height: 100vh;
+                    display: flex;
+                    justify-content: center;
+                    /* align-items: center; */
+                    background: radial-gradient(circle, #ffb9168f, #ffb3008f);
+                }
+    
+                .centrado-cursiva {
+                    color: black;
+                    font-family: "Playwrite AR", cursive;
+                    font-optical-sizing: auto;
+                    font-weight: <weight>;
+                    font-style: normal;     
+                    text-align: center; /* Centra el texto */            
+                }
+    
+                .centrado-titulo {
+                    text-align: center;
+                    color: black;
+                    margin-top: 75px;
+    
+                    font-family: "Roboto Mono", monospace;
+                    font-optical-sizing: auto;
+                    font-weight: <weight>;
+                    font-style: normal;              
+                }
+    
+                .boton-start {
+                    margin-left: 100%;
+                    transform: translateX(55%);
+                    font-family: "Josefin Sans", sans-serif;
+                    font-optical-sizing: auto;
+                    font-weight: <weight>;
+                    font-style: normal;
+                    background-color: rgba(255, 100, 0, 1);
+                    color: white;
+                    padding: 20px 100px;
+                    text-align: center; 
+                    font-size: 24px; 
+                    margin: 20px auto; /* Centrando el botón */
+                    margin: 4px 8px; 
+                    cursor: pointer;
+                    border: none;
+                    border-radius: 35px; /* Puntas redondeadas */  
+                    transition: background-color 0.5s ease;
+                    z-index: 999;              
+                }
+    
+                .boton-start:hover {
+                    background-color: #7c3600; /* Cambia el color del botón cuando se pasa el mouse */
+                }
+    
+                #ransomizer {
+                    font-size:3em;
+                    line-height: normal;
+                    word-spacing:0.5em;
+                }
+        
+                #ransomizer div {
+                    display:inline-block;
+                }
+        
+                #ransomizer .rww {
+                    white-space: pre;
+                    display:inline;
+                    margin-left: .2em;
+                    margin-right: .2em;
+                }
+        
+                #ransomizer .rr {
+                    -ms-transform: rotate(1.5deg);
+                    -webkit-transform: rotate(1.5deg);
+                    transform: rotate(1.5deg);
+                }
+        
+                #ransomizer .rl {
+                    -ms-transform: rotate(-1.5deg);
+                    -webkit-transform: rotate(-1.5deg);
+                    transform: rotate(-1.5deg);
+                } 
+
+                .fade-content {
+                    opacity: 1;
+                    transition: opacity 2s ease-in-out;
+                }
+            </style>
+        </head>
+    
+        <body>
+            <div id="content" class="fade-content">
+                <div style = "margin-top: 200px;"> </div>
+                <div style="transform: translateX(7%);">
+                    <div id="ransomizer"><div class="rww"><div style="background-color:#006847;color:#ceffef;font-family:&#039;Tahoma&#039;, Geneva, sans-serif; font-size:100%; font-weight:bold; background-image:url(https://i.imgur.com/ruhP2kd.png) ; background-position: left bottom; font-style:italic; box-shadow:-1px 1px 2px #333; line-height:125%; margin:0.1em; padding:0.3em; vertical-align:baseline; ">A</div><div class="rl" style="background-color:#006847;color:#ceffef;font-family:&#039;Palatino Linotype&#039;, &#039;Book Antiqua&#039;, Palatino, serif; font-size:100%; font-weight:bold; background-image:url(https://i.imgur.com/1wxqouY.png) ; background-position: right center; box-shadow:1px 1px 2px #333; text-transform:lowercase; line-height:75%; margin:0.1em; padding:0.3em; vertical-align:baseline; ">n</div><div class="rr" style="background-color:#006847;color:#ceffef;font-family:&#039;Verdana&#039;, Geneva, sans-serif; font-size:90%; line-height:125%; margin:0.1em; padding:0.1em; vertical-align:baseline; ">i</div><div class="rr" style="background-color:#F8C83C;color:#000000;font-family:&#039;Tahoma&#039;, Geneva, sans-serif; font-size:90%; background-image:url(https://i.imgur.com/1wxqouY.png) ; background-position: center bottom; box-shadow:-1px -1px 2px #333; text-transform:lowercase; line-height:125%; margin:0.1em; padding:0.3em; vertical-align:-0.1em; ">m</div><div class="rl" style="background-color:#CE1126;color:#ffffff;font-family:&#039;Georgia&#039;, serif; font-size:110%; font-weight:bold; background-image:url(https://i.imgur.com/pwrAKPo.png) ; background-position: left bottom; box-shadow:1px -1px 2px #333; text-transform:uppercase; line-height:125%; margin:0.1em; padding:0.2em; vertical-align:-0.1em; ">a</div><div class="rr" style="background-color:#F15770;color:#000000;font-family:&#039;Times New Roman&#039;, Times, serif; font-size:110%; font-weight:bolder; box-shadow:1px 1px 2px #333; text-transform:uppercase; line-height:125%; margin:0.1em; padding:0.2em; vertical-align:baseline; ">l</div></div> <div class="rww"><div style="background-color:#F9AA51;color:#000000;font-family:&#039;Verdana&#039;, Geneva, sans-serif; font-size:110%; background-image:url(https://i.imgur.com/1wxqouY.png) ; background-position: center center; box-shadow:-1px 1px 2px #333; text-transform:uppercase; line-height:100%; text-decoration:underline; margin:0.1em; padding:0.1em; vertical-align:baseline; ">F</div><div class="rr" style="background-color:#803F1D;color:#ffffff;font-family:&#039;Verdana&#039;, Geneva, sans-serif; font-size:110%; font-weight:bolder; font-style:italic; box-shadow:-1px -1px 2px #333; text-transform:lowercase; line-height:75%; margin:0.1em; padding:0.1em; vertical-align:0.1em; ">a</div><div style="background-color:#CE1126;color:#ffffff;font-family:&#039;Times New Roman&#039;, Times, serif; font-size:90%; font-weight:bold; background-image:url(https://i.imgur.com/IcV8Q3G.png) ; background-position: center bottom; box-shadow:1px -1px 2px #333; text-transform:uppercase; line-height:75%; margin:0.1em; padding:0.2em; vertical-align:baseline; ">r</div><div style="background-color:#717732;color:#ffffff;font-family:&#039;Times New Roman&#039;, Times, serif; font-size:90%; background-image:url(https://i.imgur.com/IcV8Q3G.png) ; background-position: right bottom; text-transform:uppercase; line-height:100%; margin:0.1em; padding:0.3em; vertical-align:-0.1em; ">m</div></div></div>
+                </div>
+                <h2 class="centrado-cursiva">Write Your Own Adventure</h2>
+                <h2 class="centrado-titulo">A production developed by Mauro Fiore and Valentin Alfie</h2>
+                <div style = "margin-top: 25px;"> </div>
+                <button id="change-text-button" class = "boton-start" style="position: absolute;" onclick="irHisoriaoriginal()">Start Adventure</button>
+            <div\>
+        </body>
+    </html>
