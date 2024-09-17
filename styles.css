@@ -1,0 +1,113 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+AR:wght@100..400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playwrite+AR:wght@100..400&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playwrite+AR:wght@100..400&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Varela+Round&display=swap" rel="stylesheet">
+
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    background: radial-gradient(circle, #ffb9168f, #ffb3008f);
+}
+
+.centrado-cursiva {
+    color: black;
+    font-family: "Playwrite AR", cursive;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;     
+    text-align: center; /* Centra el texto */            
+}
+
+.centrado-titulo {
+    text-align: center;
+    color: black;
+    margin-top: 75px;
+
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;              
+}
+
+.boton-start {
+    margin-left: 100%;
+    transform: translateX(50%);
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    background-color: rgba(255, 100, 0, 1);
+    color: white;
+    padding: 20px 100px;
+    text-align: center; 
+    font-size: 24px; 
+    margin: 20px auto; /* Centrando el botón */
+    margin: 4px 8px; 
+    cursor: pointer;
+    border: none;
+    border-radius: 35px; /* Puntas redondeadas */  
+    transition: background-color 0.5s ease;
+    z-index: 999;              
+}
+
+.boton-start:hover {
+    background-color: #7c3600; /* Cambia el color del botón cuando se pasa el mouse */
+}
+
+#ransomizer {
+    font-size:3em;
+    line-height: normal;
+    word-spacing:0.5em;
+}
+
+#ransomizer div {
+    display:inline-block;
+}
+
+#ransomizer .rww {
+    white-space: pre;
+    display:inline;
+    margin-left: .2em;
+    margin-right: .2em;
+}
+
+#ransomizer .rr {
+    -ms-transform: rotate(1.5deg);
+    -webkit-transform: rotate(1.5deg);
+    transform: rotate(1.5deg);
+}
+
+#ransomizer .rl {
+    -ms-transform: rotate(-1.5deg);
+    -webkit-transform: rotate(-1.5deg);
+    transform: rotate(-1.5deg);
+} 
+
+.container {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.fade-content {
+    opacity: 1;
+    transition: opacity 2s ease-in-out;
+}
+
+.fade-content.hidden {
+    opacity: 0;
+}
+
+.varela-round-regular {
+    font-family: "Varela Round", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
