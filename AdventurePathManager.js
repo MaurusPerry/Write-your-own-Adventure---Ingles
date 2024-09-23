@@ -27,3 +27,23 @@ function irPath2SnowBallBad()
 {
     window.location.href = "../../../Path0/Path1/SnowBall/SnowballBad/Path2SnowBallBad.html";
 }
+
+function irPath3NotRebellion()
+{
+    window.location.href = "../../../../Path0/Path1/SnowBall/SnowballBad/Path3NotRebellion.html";
+}
+
+function irPath3Rebellion()
+{
+    window.location.href = "../../../../Path0/Path1/SnowBall/SnowballBad/Path3Rebellion.html";
+}
+
+function irPath2AlienInvasion()
+{
+    window.location.href = "../../../Path0/Path1/OriginalHistory/Path2AlienInvasion.html";
+}
+
+function irPath2Haxball()
+{
+    window.location.href = "../../../Path0/Path1/OriginalHistory/Path2Haxball.html";
+}
