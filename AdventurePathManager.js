@@ -17,3 +17,13 @@ function irPath1RebellionSnowball() {
 function irPath1HisotriaOriginal() {
     window.location.href = "../Path0/Path1/OriginalHistory/Path1HisotriaOriginal.html";
 }
+
+function irPath2SnowBallGood()
+{
+    window.location.href = "../../../Path0/Path1/SnowBall/Path2SnowBallGood.html";
+}
+
+function irPath2SnowBallBad()
+{
+    window.location.href = "../../../Path0/Path1/SnowBall/SnowballBad/Path2SnowBallBad.html";
+}
